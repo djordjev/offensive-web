@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Some test title</title>
+		<script src="script/indexScript.js" ></script>
+	</head>
+
+	<body>
+		<div id="fb-root"></div>
+		<div align="center">
+			<table align="center">
+				<tr>
+					<td id="lblUsername">Username:</td>
+					<td>
+					<input type="text" id="txtUsername" />
+					</td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td>
+					<input type="password" id="txtPassword" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td><input type="button" value="Regiser" onclick="registerHandler()" /></td>
+					<td><input type="button" value="Log in" onclick="loginHandler()" /></td>
+				</tr>
+			</table>
+			<br align="center"/>
+			
+			<div class="fb-login-button" data-width="300" data-height="50" data-max-rows="1" ></div>
+
+		</div>
+	</body>
+</html>
