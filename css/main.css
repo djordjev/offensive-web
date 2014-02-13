@@ -1,0 +1,53 @@
+@CHARSET "ISO-8859-1";
+
+#indexBody {
+	background-image: url("../images/offensive-background.jpg");
+}
+
+#swfPageBody {
+	background-image: url("../images/offensive-background-grey.jpg");
+}
+
+.textFields {
+	background-color: rgb(255, 255, 255);
+	opacity: 0.4;
+	border: 0px solid;
+	width:  365px;
+	height: 36px;
+	font-size: 26px;
+}
+
+#mainContent
+{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 225px;
+}
+
+@font-face {
+	font-family: HemiHead;
+	src: url("font/hemi-head-bd-it.otf");
+}
+
+.descText {
+	font-family: HemiHead;
+	font-size: 26px;
+	color: white;
+}
+
+.linkText {
+	font-family: HemiHead;
+	font-size: 26px;
+	color: white;
+	cursor: pointer;
+}
+
+#mainContentForSWF {
+	position: relative;
+	top: 230px;
+	font-family: HemiHead;
+	font-size: 26px;
+	color: white;
+}
+

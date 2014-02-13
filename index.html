@@ -2,38 +2,53 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Some test title</title>
-		<script src="script/indexScript.js" ></script>
-	</head>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Offensive game</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="script/indexScript.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
 
-	<body>
-		<div id="fb-root"></div>
-		<div align="center">
-			<table align="center">
-				<tr>
-					<td id="lblUsername">Username:</td>
-					<td>
-					<input type="text" id="txtUsername" />
-					</td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td>
-					<input type="password" id="txtPassword" />
-					</td>
-				</tr>
-				
-				<tr>
-					<td><input type="button" value="Regiser" onclick="registerHandler()" /></td>
-					<td><input type="button" value="Log in" onclick="loginHandler()" /></td>
-				</tr>
-			</table>
-			<br align="center"/>
+<body id="indexBody">
+	<div id="fb-root"></div>
+	<div id="mainContent">
+		<table align="center">
+			<tr>
+				<td id="lblUsername" class="descText">Username:</td>
+				<td><input class="textFields" type="text" id="txtUsername" />
+				</td>
+			</tr>
 			
-			<div class="fb-login-button" data-width="300" data-height="50" data-max-rows="1" ></div>
+			<tr>
+				<td class="descText">Password:</td>
+				<td><input class="textFields" type="password" id="txtPassword" />
+				</td>
+			</tr>
 
-		</div>
-	</body>
+			<tr>
+				<td></td>
+				<td>
+					<table width="365">
+						<tr>
+							<td align="left"><a class="linkText" onclick="registerHandler()" >REGISTER</a></td>
+							<td align="right"><a class="linkText" onclick="loginHandler()" >LOGIN</a></td>
+						</tr>
+					</table>
+				</td>
+
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>
+					<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">
+						Login with Facebook
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
 </html>

@@ -4,12 +4,12 @@
 
 function onMainPageLoad() {
 
-	var mainContent = document.getElementById('mainContent');
+	var mainPageContent = document.getElementById('mainContentForSWF');
 	if (sessionStorage.getItem('facebookId')) {
 		getMe(function(response) {
-			mainContent.innerHTML = "Welcome " + response.name;
+			mainPageContent.innerHTML = "Welcome " + response.name;
 		});
 	} else {
-		mainContent.innerHTML = "Welcome " + sessionStorage.getItem('username');
+		mainPageContent.innerHTML = "Welcome " + sessionStorage.getItem('username');
 	}
 }
