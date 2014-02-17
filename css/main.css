@@ -1,11 +1,19 @@
 @CHARSET "ISO-8859-1";
 
 #indexBody {
-	background-image: url("../images/offensive-background.jpg");
+	 background: url("../images/offensive-background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #swfPageBody {
-	background-image: url("../images/offensive-background-grey.jpg");
+	 background: url("../images/offensive-background-grey.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .textFields {
@@ -50,4 +58,6 @@
 	font-size: 26px;
 	color: white;
 }
+
+
 
