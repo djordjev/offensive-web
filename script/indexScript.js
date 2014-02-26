@@ -9,11 +9,36 @@ function storeLoginResponse(response) {
 }
 
 function loginHandler() {
+	var username = $("#txtUsername").val();
+	var password = $("#txtPassword").val();
 	
+	$.ajax({
+		url: "phpScripts/login_to_server_no_facebook.php",
+		type: "post",
+		data: {"username" : username, "password" : CryptoJS.MD5(password).toString()},
+		datatype: "json",
+		success: function(data) {
+			handleLoginResponse(data);
+		},
+		error: function() {
+			alert("Some error during login");
+		}
+	});
+}
+
+function handleLoginResponse(data) {
+	var response = $.parseJSON(data);
+	if(response.userId > 0) {
+		alert("Login is successfull"); 
+		sessionStorage.setItem('userId', response.userId);
+		$(location).attr('href', "mainPage.html");
+	} else {
+		alert("Login is not successfull");
+	}
 }
 
 function registerHandler() {
-	window.location = "registration.html";
+	$(location).attr('href', "registration.html");
 }
 
 window.fbAsyncInit = function() {

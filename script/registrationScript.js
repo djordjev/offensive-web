@@ -14,13 +14,24 @@ function registerHandler() {
 	$.ajax({
 		url: "phpScripts/register_on_server.php",
 		type: "post",
-		data: {"username" : username, "password" : password},
+		data: {"username" : username, "password" : CryptoJS.MD5(password).toString()},
 		datatype: "json",
 		success: function(data) {
-			alert("Kewl " + data);
+			handleRegistrationResponse(data);
 		},
 		error: function() {
 			alert("Some error");
 		}
 	});
+}
+
+
+function handleRegistrationResponse(data) {
+	var response = $.parseJSON(data);
+	if(response.isSuccessfull === "true") {
+		alert("Registration is successfull"); 
+		$(location).attr('href', "index.html");
+	} else {
+		alert("Registration is not successfull");
+	}
 }

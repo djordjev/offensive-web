@@ -21,7 +21,7 @@ if (! $socket) {
 	);
 	$encoded_message = json_encode ( $message );
 	$message_length = strlen ( $encoded_message );
-	$header = pack ( "NNNCC", REGISTER_HANDLER, DUMMY_TICKET_ID, $message_length, DUMMY_STATUS, JSON_PROTOCOL );
+	$header = pack ( "NNNCC", LOGIN_HANDLER, DUMMY_TICKET_ID, $message_length, DUMMY_STATUS, JSON_PROTOCOL );
 	fwrite ( $socket, $header . $encoded_message );
 	
 	// wait for response
