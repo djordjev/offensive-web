@@ -29,7 +29,6 @@ function registerHandler() {
 function handleRegistrationResponse(data) {
 	var response = $.parseJSON(data);
 	if(response.isSuccessfull === "true") {
-		alert("Registration is successfull"); 
 		$(location).attr('href', "index.html");
 	} else {
 		alert("Registration is not successfull");

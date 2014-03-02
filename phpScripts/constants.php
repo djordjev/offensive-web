@@ -4,6 +4,7 @@
 	
 	define("REGISTER_HANDLER", 0x0);
 	define("LOGIN_HANDLER", 0x1);
+	define("FACEBOOK_LOGIN_HANDLER", 0x2);
 	
 	define("DUMMY_TICKET_ID", 0x0);
 	define("DUMMY_STATUS", 0x0);

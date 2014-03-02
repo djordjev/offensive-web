@@ -21,7 +21,7 @@ function loginHandler() {
 			handleLoginResponse(data);
 		},
 		error: function() {
-			alert("Some error during login");
+			alert("Error during login");
 		}
 	});
 }
@@ -29,7 +29,6 @@ function loginHandler() {
 function handleLoginResponse(data) {
 	var response = $.parseJSON(data);
 	if(response.userId > 0) {
-		alert("Login is successfull"); 
 		sessionStorage.setItem('userId', response.userId);
 		$(location).attr('href', "mainPage.html");
 	} else {
@@ -52,7 +51,19 @@ window.fbAsyncInit = function() {
 	FB.Event.subscribe('auth.authResponseChange', function(response) {
 		if(response.status === 'connected') {
 			storeLoginResponse(response);
-			window.location = "mainPage.html";
+			$.ajax({
+				url: "phpScripts/login_to_server_facebook.php",
+				type: "post",
+				data: {"facebookId" : response.authResponse.userID},
+				datatype: "json",
+				success: function(data) {
+					handleLoginResponse(data);
+					window.location = "mainPage.html";
+				},
+				error: function() {
+					alert("Error during login");
+				}
+			});
 		} else if(response.status === 'not_authorized') {
 			alert('You have no access to this application');
 		} 
@@ -61,7 +72,19 @@ window.fbAsyncInit = function() {
 	FB.getLoginStatus(function(response) {
 		if(response.status === 'connected') {
 			storeLoginResponse(response);
-			window.location = "mainPage.html";
+			$.ajax({
+				url: "phpScripts/login_to_server_facebook.php",
+				type: "post",
+				data: {"facebookId" : response.authResponse.userID},
+				datatype: "json",
+				success: function(data) {
+					handleLoginResponse(data);
+					window.location = "mainPage.html";
+				},
+				error: function() {
+					alert("Error during login");
+				}
+			});
 		}
 	});
 };
