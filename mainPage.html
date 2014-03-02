@@ -9,11 +9,31 @@
 		<script src="//connect.facebook.net/en_US/all.js"></script>
 		<script src="script/functions.js"></script>
 		<script src="script/mainScript.js" ></script>
+		<script type="text/javascript" src="script/swfobject.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body id="swfPageBody" onload="onMainPageLoad()" >
-		<div id="mainContentForSWF" >
-		
+		<script type="text/javascript">
+			var flashvars = {};
+			flashvars.userId = sessionStorage.getItem("userId");
+			flashvars.facebookId = sessionStorage.getItem("facebookId");
+			
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#00AA44";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            params.wmode = "direct";
+            var attributes = {};
+            attributes.id = "2211";
+            attributes.name = "2211";
+            attributes.align = "middle";
+			
+			swfobject.embedSWF("Main.swf", "mainContentForSWF", "1024", "768", "11.5.0", false, flashvars, params, attributes);
+		</script>
+	
+		<div id="#swfWrapper" align="center">
+			<div id="mainContentForSWF" align="center"></div>
 		</div>
 	</body>
 </html>
