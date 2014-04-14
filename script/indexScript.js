@@ -58,7 +58,6 @@ window.fbAsyncInit = function() {
 				datatype: "json",
 				success: function(data) {
 					handleLoginResponse(data);
-					window.location = "mainPage.html";
 				},
 				error: function() {
 					alert("Error during login");
@@ -67,25 +66,6 @@ window.fbAsyncInit = function() {
 		} else if(response.status === 'not_authorized') {
 			alert('You have no access to this application');
 		} 
-	});
-	
-	FB.getLoginStatus(function(response) {
-		if(response.status === 'connected') {
-			storeLoginResponse(response);
-			$.ajax({
-				url: "phpScripts/login_to_server_facebook.php",
-				type: "post",
-				data: {"facebookId" : response.authResponse.userID},
-				datatype: "json",
-				success: function(data) {
-					handleLoginResponse(data);
-					window.location = "mainPage.html";
-				},
-				error: function() {
-					alert("Error during login");
-				}
-			});
-		}
 	});
 };
 
