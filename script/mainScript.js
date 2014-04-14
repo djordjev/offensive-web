@@ -2,5 +2,8 @@
  * @author djordjev
  */
 
-function onMainPageLoad() {
+function getMyInfo() {
+	getMe(function(data) {
+		document.getElementById("flashClient").playerInfoReceived(data);
+	});
 }
