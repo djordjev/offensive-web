@@ -10,3 +10,9 @@ function getFacebookUserInfo(fbId, callback) {
 		callback(response);
 	});
 }
+
+function getMyFriends(callback) {
+	FB.api('/me/friends?access_token=' + sessionStorage.getItem('accessToken'), function (response) {
+		callback(response);
+	});
+}

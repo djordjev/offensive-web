@@ -13,3 +13,9 @@ function getFBUserInfo(facebookId) {
 		document.getElementById("flashClient").facebookUserInfoReceived(data);
 	});
 }
+
+function getFriendsList() {
+	getMyFriends(function response(data) {
+		document.getElementById("flashClient").friendsListReceived(data);
+	});
+}
